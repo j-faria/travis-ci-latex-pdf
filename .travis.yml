@@ -14,4 +14,5 @@ deploy:
   file: paper/paper.pdf
   skip_cleanup: true
   on:
-    repo: j-faria/travis-ci-latex-pdf
+    tags: true
+    # repo: j-faria/travis-ci-latex-pdf
