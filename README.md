@@ -3,9 +3,7 @@
 
 The lastest release of the pdf should be here: 
 
-[latest version of the paper](wrong link) 
-
-
+[latest version of the paper](https://github.com/j-faria/travis-ci-latex-pdf/releases/download/draft7-1-gf209af8/paper.pdf) 
 [good one](https://github.com/j-faria/travis-ci-latex-pdf/releases/download/draft7/paper.pdf)
 
 
