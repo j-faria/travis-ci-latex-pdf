@@ -1,17 +1,19 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
-  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+# - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended dvipng texlive-latex-recommended
+- sudo apt-get install -y latexmk
 script:
 - cd paper
 - mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build paper.tex
+- latexmk -pdf -interaction=nonstopmode -outdir=_build paper.tex
+# - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build paper.tex
 deploy:
   provider: releases
   api_key:
     secure: PBcPk718YtA1hYGbwgw6MwkgsJQh7gxbiuOzQKvC/M4YWwC6KX29lA/aRTdZ0pE/H6K+zIdvTxB2MuppdRoaTwN25ktdR3yhGUTMbJCzdTw0ceH+Xy+/pdANAzQ1Xt65nsaudU4hC+8S6jQmrEkVLeKrGE+GHXiNgaQB4WcswiV+YeVWTJIUZrnAj2/vsL7TFC53B9MCi52JDweCB0U8OABF+WcqwtktEfPM+4cF6owce/iSjRk10z6r/5ZlBfDkWJi3Fqn2q/OYWaDB5iXoJriaLk6PdgdEN+ouukcs30DyrS5IORGqHXE+GfJOuZM+RFPCOrUod61S8wXXVeunPr5j8sxlFQudj6Fbei6pQ//GKklWKjQ4759ZGam0rs0f7iKW1dkvK0TvffMAvWGx0VoxmUhwiEGRQMMWrl//dXOez24L47b+bwl4GTBjVVaynZUTqqdo6n9h2pTwaMiujb1cISw4v/LRisDkBUSJJ28zSLkmOhTY+fKrp86OcXaBINOeMFRq2veGeB+VkhXAXJnL+YMiKIFhkUiHXgHGROpM20IQOqv38CWvBGEjTz7UxCWMfFvTSSQd7HGVEU1pasCrqt8gk/tjysMnGNoP+hvE0AyPcLau2gaD/5b7D2QSL20+oFIp3fcVczAPIospA3Dbe7SVp8IgP09bAE+ePr8=
-  file: paper/paper.pdf
+  file: paper/_build/paper.pdf
   skip_cleanup: true
   on:
     tags: true
