@@ -1,9 +1,10 @@
 # TeX + Git + Continuous Integration + Dropbox
 
 
-The lastest release of the pdf should be here: 
+You can read the
+[latest version of the paper](https://github.com/j-faria/travis-ci-latex-pdf/releases/download/draft7/paper.pdf)
 
-[latest version of the paper](https://github.com/j-faria/travis-ci-latex-pdf/releases/download/draft7-1-gf209af8/paper.pdf) 
+
 [good one](https://github.com/j-faria/travis-ci-latex-pdf/releases/download/draft7/paper.pdf)
 
 
